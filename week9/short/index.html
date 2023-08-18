@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>AjaxTest</title>
+        <!-- Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="/ajax.js"></script>
+        <!-- ><link href=""css/div.css" rel="stylesheet" />  -->
+    </head>
+        <h2>Ajax Test</h2>
+
+        <div>
+            <form>
+                <select name="staff" onchange="cs50Info(this.value);">
+                    <option value="">Select someone:</option>
+                    <option value="bone">bone</option>
+                    <option value="heart">heart</option>
+                    <option value="teeth">teeth</option>
+                </select>
+            </form>
+        </div>
+        <div id="infodiv">
+            Information goes here
+        </div>
+    </body>
+</html>
