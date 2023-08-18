@@ -1,0 +1,70 @@
+<!-- popup.html -->
+<!DOCTYPE html>
+<html lang = "en">
+
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Subnet Calculator</title>
+      <!--<link rel="icon" type="image/x-icon" href="/images/favicon.ico"> -->
+      <link rel="icon" type="image/png" href="./images/icon-16.png">
+      <link rel="stylesheet" href="./style.css">
+      <script src="./jquery-3.7.0.min.js"></script>
+      <link rel="stylesheet" href="./bootstrap.min.css">
+
+      <script src="./bootstrap.bundle.min.js"></script>
+      <!-- I know that placing images between head tags is not standard practice -->
+      <!-- This is the only way that I can fit everything inside the default -->
+      <!-- extension window size of 600 x 800. I accept the 2 html validation errors.-->
+      <img src="./images/icon-32.png" alt="SubnetCALC icon" style="padding-inline-start:155px;">&nbsp;<span style="font-size:22px; font-weight: bold;"> SubnetCalc </span>
+    </head>
+
+    <body>
+      <div class="container" style="padding-top:5px; padding-bottom: 5px; background-color: rgb(235, 233, 233); font-weight: bold;">        
+        Enter an IP Address or CIDR notation:       
+        <!-- Add copy button -->
+        <button id = "copy_button" type = "button" style = "float: right; background: none;
+        border: none; padding: 0; cursor: pointer;">
+          <i class = "icon" id = "copy_icon" style="font-weight: bold; font-size: 1.5em; text-align:end">
+          &#x1F5CE;</i>
+        </button>
+
+        <!-- User input -->
+        <form id = "inputform">
+          <input type="text" id="userInput" autocomplete="off" placeholder="8.8.8.8 or 8.8.8.8/25"><br>
+          <button type = "submit" id="submit_button">Submit</button>
+          <input type = "reset" id = "reset_button" value = "Reset">
+        </form><br>
+
+        <!-- Container for JSON response -->
+        <div class = "conatiner-fluid" id="display_box" style="background-color: rgb(255, 255, 255); font-size:11px;  border: 1px solid #ccc; border-radius: 5px;">
+          CIDR Notation: <span id="cidr_notation" style="margin-left:70px;"></span> &nbsp; &nbsp; &nbsp; &nbsp; 
+          <span id="ipclass"></span>&nbsp; &nbsp; &nbsp; &nbsp;<span id="param"></span><br>
+          Subnet Bits: <span id="subnet_bits" style="margin-left:87px;"></span><br>
+          Subnet Mask: <span id="subnet_mask" style="margin-left:78px;"></span><br>
+          Wildcard Mask: <span id="wildcard_mask" style="margin-left:68px;"></span><br>
+          Network Address: <span id="network_address" style="margin-left:55px;"></span><br>
+          Broadcast Address: <span id="broadcast_address" style="margin-left:49px;"></span><br>
+          Assignable Hosts: <span id="assignable_hosts" style="margin-left:57px;"></span><br>
+          First Assignable Host: <span id="first_assignable_host" style="margin-left:36px;"></span><br>
+          Last Assignable Host: <span id="last_assignable_host" style="margin-left:38px;"></span><br><br>
+          Binary<br>
+          Octet 1: <span id="binary_octet1" style="margin-left:108px;"></span><br>
+          Octet 2: <span id="binary_octet2" style="margin-left:108px;"></span><br>
+          Octet 3: <span id="binary_octet3" style="margin-left:108px;"></span><br>
+          Octet 4: <span id="binary_octet4" style="margin-left:108px;"></span><br>
+          Address: <span id="binary_address" style="margin-left:104px;"></span><br>
+          Subnet Mask: <span id="binary_subnet_mask" style="margin-left:77px;"></span><br>
+          Wildcard Mask: <span id="binary_wildcard_mask" style="margin-left:68px;"></span><br>
+          Network Address: <span id="binary_network_address" style="margin-left:56px;"></span><br>
+          Broadcast Address: <span id="binary_broadcast_address" style="margin-left:50px;"></span><br>
+          First Assignable Address: <span id="binary_first_assignable_address" style="margin-left:19px;"></span><br>
+          Last Assignable Address: <span id="binary_last_assignable_address" style="margin-left:21px;"></span>        
+        </div>
+        <script src="popup.js"></script>                
+      </div>
+    <footer>
+      SubnetCalc:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="mailto:subnetcalcinfo@gmail.com">Support</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" id="readme">Documentation</a>  
+    </footer>      
+    </body>
+</html>
